@@ -1,0 +1,24 @@
+.micssboton{
+
+    background-color: rgb(202, 53, 148);
+    color: white;
+    border: 2px solid rgb(202, 53, 148);
+}
+
+.micssboton:hover{
+
+    background-color: rgb(226, 61, 166);
+
+}
+
+.bordesdellogin{
+
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+}
+
+.mimargen{
+
+    margin-top: 90px !important;
+    
+}
