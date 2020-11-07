@@ -8,6 +8,7 @@ import { MyheaderComponent } from './components/myheader/myheader.component';
 import { MybodyComponent } from './components/mybody/mybody.component';
 import { RegistroComponent } from './components/registro/registro.component';
 import { InicioDeSesionComponent } from './components/inicio-de-sesion/inicio-de-sesion.component';
+import { FormularioLibroComponent } from './formulario-libro/formulario-libro.component';
 
 
 @NgModule({
@@ -16,7 +17,8 @@ import { InicioDeSesionComponent } from './components/inicio-de-sesion/inicio-de
     MyheaderComponent,
     MybodyComponent,
     RegistroComponent,
-    InicioDeSesionComponent
+    InicioDeSesionComponent,
+    FormularioLibroComponent
   ],
   imports: [
     BrowserModule,
