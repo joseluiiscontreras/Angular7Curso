@@ -31,8 +31,8 @@ export class MyheaderComponent implements OnInit {
     // dependiendo de su resultado indicamos si estamos logeados o no. 
    this.auth.estaAutenticado().subscribe(resultado => {
 
-    if(resultado){
-      console.log("estamos logeado");
+    if(resultado){ 
+      console.log("estamos logeado!");
       console.log(resultado);
       this.foto=resultado.photoURL;
       console.log("foto: " + this.foto);
