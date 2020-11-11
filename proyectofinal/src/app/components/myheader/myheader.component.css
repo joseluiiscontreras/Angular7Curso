@@ -1,0 +1,28 @@
+.imagen-usuario{
+
+    border-radius: 100%;
+
+}
+
+.itemCerrar{
+    
+    cursor: pointer !important;
+}
+
+
+.itemCerrar:hover{
+    
+    background-color: rgb(202, 53, 148);
+    color:whitesmoke;
+}
+
+
+.itemCerrar2:hover{
+    background-color: rgb(228, 182, 0);
+   
+}
+
+
+.mistilo{
+    color: whitesmoke;
+}

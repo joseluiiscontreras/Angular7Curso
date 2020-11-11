@@ -1,3 +1,53 @@
-<p>
-  registro works!
-</p>
+
+
+<div class="container-fluid mimargen mt-5  " >
+
+  <div class="container" >
+  
+    <div class="row bordesdellogin  bg-light w-50 m-auto " >
+  
+    
+  
+      <div class="col-md-12 p-5 ">
+  
+          
+        
+        <form class="px-5 " #formularioLogin="ngForm" (submit)="registrarPorUsuarioContrasena()"  >
+          
+          <div class="form-group" >
+            <label for="exampleInputEmail1">Email address</label>
+            <input type="text" class="form-control" id="exampleInputEmail1" [(ngModel)]="user" aria-describedby="emailHelp" placeholder="Tu email" name="user">
+            
+          </div>
+          <div class="form-group">
+            <label for="exampleInputPassword1">Password</label>
+            <input type="password" class="form-control" id="exampleInputPassword1" [(ngModel)]="pass" placeholder="Tu contraseña" name="pass">
+          </div>
+          
+          
+          <button type="submit" class="btn btn-outline-warning  btn-block">Registrar</button>
+          <button type="button" class="btn btn-warning  btn-block  " (click)="iniciarSesionPorGoogle()" >  <i class="fa fa-google" aria-hidden="true"></i> Registrar por Google</button>
+          
+      
+        
+          
+          
+          
+     
+          
+          
+        </form>
+  
+  
+      
+  
+      </div>
+  
+     
+  
+    </div>
+  
+  </div>
+  
+  
+  </div>

@@ -1,5 +1,5 @@
 
-<div class="container-fluid mimargen mt-5  " >
+<div class="container-fluid mimargen mt-5 ">
 
   <div class="container" >
   
@@ -10,42 +10,64 @@
       <div class="col-md-12 p-5 ">
   
           
-        
-        <form class="px-5 " >
-          
+        <!--formulario-->
+        <form class="px-5 " #bookForm="ngForm" >
+
+
+     
+          <!--fila-->
           <div class="form-row">
 
+
+              <!--columna 1-->
               <div class="col">    
-                  <div class="form-group">
+                  
+                
+                <div class="form-group">
                   <label for="exampleInputEmail1">Title</label>
-                  <input type="text" class="form-control"  aria-describedby="emailHelp" placeholder="Book Title">
+                  <input type="text" class="form-control"  aria-describedby="emailHelp" placeholder="Book Title" [(ngModel)]="titulo" name="titulox">
 
                   </div>
-              </div>
 
+
+              </div>
+              <!--end columna 1-->
+
+
+              <!--columna 2-->
               <div class="col">
+
                   <div class="form-group">
                   <label for="exampleInputPassword1">Author</label>
-                  <input type="text" class="form-control"  placeholder="Author name">
+                  <input type="text" class="form-control"  placeholder="Author name" [(ngModel)]="autor" name="autorx">
                   </div>
-              </div>  
-        </div>
 
-         <div class="form-group">
+
+              </div> 
+              <!--end columna 2-->
+              
+          </div>
+          <!--end fila-->
+
+
+                  <div class="form-group">
                   <label for="exampleInputEmail1">Imagen URL</label>
-                  <input type="text" class="form-control"  placeholder="Image url associated with the book.">
+                  <input type="text" class="form-control"  placeholder="Image url associated with the book." [(ngModel)]="imageURL" name="imagenUrlx">
 
                   </div>
 
-          <label for="exampleInputPassword1">Description</label>
-          <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-          <small id="emailHelp" class="form-text text-muted">Siéntete en libertad de escribir cualquier informacion adicional.</small>
+                  <label for="exampleInputPassword1">Description</label>
+                  <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" [(ngModel)]="descripcion" name="descripcionx"></textarea>
+                  <small id="emailHelp" class="form-text text-muted">Siéntete en libertad de escribir cualquier informacion adicional.</small>
           
          
           
-          <button type="submit" class="btn btn-warning micssboton btn-block mt-5  " [routerLink]="['registro']">Add Book</button>
+                  <button type="button" class="btn btn-warning micssboton btn-block mt-5" (click)="guardar()" >Add Book</button>
+
+
+
         </form>
-      
+         <!--end formulario-->
   
       </div>
   
@@ -56,4 +78,7 @@
   </div>
   
   
-  </div>
+</div>
+
+
+

@@ -7,10 +7,12 @@ import { FormularioLibroComponent } from './formulario-libro/formulario-libro.co
 
 const routes: Routes = [
 
-{ path: '', component: MybodyComponent},
+
 { path: 'login', component: InicioDeSesionComponent},
 {path:'login/registro', component: RegistroComponent},
-{path:'add', component: FormularioLibroComponent}
+{path:'libros/add', component: FormularioLibroComponent},
+{ path: 'libros', component: MybodyComponent}
+
 
 ];
 

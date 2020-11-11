@@ -2,6 +2,7 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
   <a class="navbar-brand " href="#">
     <img src="https://www.flaticon.com/svg/static/icons/svg/1946/1946028.svg" width="70" height="70" alt="">
+    
     </a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
@@ -20,10 +21,10 @@
 
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle " href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-        Navigate
+        Navigate  
         </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="#">Libros</a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">  
+          <a class="dropdown-item" href="libros" *ngIf="estaLogueado">Libros</a>
           <a class="dropdown-item" href="#">Autores</a>
           <div class="dropdown-divider"></div>
           <a class="dropdown-item" href="#">Something else here</a>
@@ -47,6 +48,37 @@
     </form>
 
     
-    <button class="btn btn-warning my-2 ml-2 my-sm-0" [routerLink]="['login']" >Iniciar sesión </button>
+    <button class="btn btn-warning my-2 ml-2 my-sm-0" [routerLink]="['login']" *ngIf="!estaLogueado" >Iniciar sesión </button>
+    <i class="fa fa-user-circle-o ml-3 fa-2x mistilo" aria-hidden="true" *ngIf="tieneFoto"></i>
+    <!--
+    <button class="btn btn-warning my-2 ml-2 my-sm-0" (click)="cerrarSesion()" *ngIf="estaLogueado" >Cerrar sesión </button>
+-->
+
+
+
+
+
+      <ul class="navbar-nav" *ngIf="estaLogueado"> 
+        
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle " href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                {{displayname}}   <img class="imagen-usuario" src="{{foto}}" width="40" height="40" alt="" *ngIf="!tieneFoto">
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">  
+              
+                  <a class="itemCerrar2 dropdown-item" href="#">Perfil</a>
+                  <a class="itemCerrar2 dropdown-item" href="#">Configuracion</a>
+                  <div class="dropdown-divider"></div>
+                  <a class="itemCerrar dropdown-item " (click)="cerrarSesion()" href="#" >Cerrar sesión</a>
+                </div>
+              </li>
+        
+      </ul>
+
+      
+
+
+
+
   </div>
 </nav>
