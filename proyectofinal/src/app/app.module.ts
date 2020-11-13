@@ -19,6 +19,8 @@ import { AutenticacionService } from './servicios/autenticacion.service';
 
 
 import { AngularFontAwesomeModule } from 'angular-font-awesome';
+import { HomepageComponent } from './components/homepage/homepage.component';
+import { FooterComponent } from './components/footer/footer.component';
 
 
 
@@ -29,7 +31,9 @@ import { AngularFontAwesomeModule } from 'angular-font-awesome';
     MybodyComponent,
     RegistroComponent,
     InicioDeSesionComponent,
-    FormularioLibroComponent
+    FormularioLibroComponent,
+    HomepageComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,

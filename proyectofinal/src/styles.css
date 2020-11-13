@@ -5,3 +5,18 @@ body{
     background: rgb(233,163,41);
 background: linear-gradient(90deg, rgba(233,163,41,0.5858718487394958) 30%, rgba(255,0,164,0.44021358543417366) 64%, rgba(255,0,202,0.35057773109243695) 97%);
 }
+
+
+::-webkit-scrollbar{
+    width: 10px;
+}
+
+::-webkit-scrollbar-track{
+    border:5px solid #383838;
+    box-shadow: inset 0 0 2.5px 2px rgba(41, 43,44, 0.5);
+}
+
+::-webkit-scrollbar-thumb{
+    background:linear-gradient(45deg,#ff83e0,#f0ba08);
+    border-radius: 3px;
+}

@@ -32,7 +32,7 @@ export class MyheaderComponent implements OnInit {
    this.auth.estaAutenticado().subscribe(resultado => {
 
     if(resultado){ 
-      console.log("estamos logeado!");
+      console.log("estamos logeado!!");
       console.log(resultado);
       this.foto=resultado.photoURL;
       console.log("foto: " + this.foto);
