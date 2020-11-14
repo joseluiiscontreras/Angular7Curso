@@ -2,8 +2,8 @@ import { Component, OnInit } from '@angular/core';
 
 import { DatalibroService } from '../servicios/datalibro.service';
 import { Router } from '@angular/router';
+import { Libro } from '../servicios/Libro';
 
- 
 
 @Component({
   selector: 'app-formulario-libro',
@@ -14,10 +14,10 @@ export class FormularioLibroComponent implements OnInit {
 
   
 
-  private titulo : string;
-  private autor : string;
-  private imageURL : string;
-  private descripcion : string;
+  public titulo : string;
+  public autor : string;
+  public imageURL : string;
+  public descripcion : string;
 
  
   constructor(private servicio : DatalibroService,private ruta: Router) {
@@ -38,9 +38,18 @@ export class FormularioLibroComponent implements OnInit {
 
 
   public guardar(){
-    
-    this.servicio.agregarLibro(this.titulo,this.autor,this.descripcion,this.imageURL);
-    this.ruta.navigate(['libros'])
+  
+
+    let libro = { 
+      nombre : this.titulo,
+      autor: this.autor,
+      imagen: this.imageURL,
+      descripcion: this.descripcion
+    }
+
+
+    this.servicio.agregarLibro(libro);
+    this.ruta.navigate(['libros']);
     
   }
 

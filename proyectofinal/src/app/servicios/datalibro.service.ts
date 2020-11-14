@@ -18,6 +18,7 @@ export class DatalibroService {
   private documento: AngularFirestoreDocument<Libro>
   private aux :Observable<Libro> // observable de un solo libro
 
+  /*
   public lista_de_libros : Libro[] = [
     new Libro("A DANCE WITH DRAGONS","George R. Martin","Lorem ipsum dolor sit, amet consectetur adipisicing elit. Laudantium sit quia minima accusamus ipsum, omnis sunt vero alias possimus aperiam! Asperiores expedita unde eveniet maxime, veritatis assumenda alias reiciendis doloribus.","https://media.npr.org/assets/img/2011/07/06/dragons_custom-22fe9239df021369ad6e115282dfc9a23fbc7466-s800-c85.jpeg"),
     new Libro("THE WINDS OF WINTER","George R. Martin","Lorem ipsum dolor sit, amet consectetur adipisicing elit. Laudantium sit quia minima accusamus ipsum, omnis sunt vero alias possimus aperiam! Asperiores expedita unde eveniet maxime, veritatis assumenda alias reiciendis doloribus.","https://nerdist.com/wp-content/uploads/2020/07/the-Winds-of-Winter-cover.jpg"),
@@ -32,8 +33,7 @@ export class DatalibroService {
     new Libro("THE WINDS OF WINTER","George R. Martin","Lorem ipsum dolor sit, amet consectetur adipisicing elit. Laudantium sit quia minima accusamus ipsum, omnis sunt vero alias possimus aperiam! Asperiores expedita unde eveniet maxime, veritatis assumenda alias reiciendis doloribus..","https://descubierta.es/wp-content/uploads/2019/03/portada-libro-ilustrada-asuntoshonor.jpg"),
     new Libro("A DANCE WITH DRAGONS","George R. Martin","Lorem ipsum dolor sit, amet consectetur adipisicing elit. Laudantium sit quia minima accusamus ipsum, omnis sunt vero alias possimus aperiam! Asperiores expedita unde eveniet maxime, veritatis assumenda alias reiciendis doloribus..","https://static.megustaleer.com.ar/images/libros_650_x/EGR51716.jpg"),
   ];
-
-  
+  */
 
 
 
@@ -46,11 +46,11 @@ export class DatalibroService {
 
 
 
-
+/*
   public agregarLibro(nombre:string,autor:string,descripcion:string,imagen:string){
 
     let libro = new Libro(nombre,autor,descripcion,imagen);
-      this.lista_de_libros.push(libro);
+      this.lista_de_lib*ros.push(libro);
   }
 
 
@@ -58,6 +58,9 @@ export class DatalibroService {
   public listaLibro(){
     return this.lista_de_libros;
   }
+  */
+
+  
 
 // metodo para obtener libros de AngularFirestore 
   public getAllBooks(){
@@ -91,6 +94,29 @@ export class DatalibroService {
   }
 
 
+
+  agregarLibro(libro : any) : void {
+
+    this.coleccionDeLibros.add(libro);
+
+  }
+
+
+  actualizarLibro(libro : Libro) : void {
+    let id = libro.id;
+
+    this.documento = this.angularstore.doc<Libro>(`books/${id}`);
+
+    this.documento.update(libro);
+
+  }
+
+
+  borrarLibro(id : string) : void {
+    this.documento = this.angularstore.doc<Libro>(`books/${id}`);
+    this.documento.delete();
+
+  }
 
 
 
