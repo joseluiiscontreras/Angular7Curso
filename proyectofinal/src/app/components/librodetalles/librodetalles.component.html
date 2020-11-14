@@ -3,7 +3,7 @@
   <div class="card-body">
     <h5 class="card-title">{{libro.nombre}}</h5>
     <p class="card-text">{{libro.descripcion}}</p>
-    <a href="#" class="btn btn-warning btn-sm">editar</a>
-    <a href="#" class="btn btn-warning btn-sm ml-2">eliminar</a>
+    <a  class="btn btn-warning btn-sm" routerLink="/libros/edit/{{this.id}}" >editar</a>
+    <button  class="btn btn-warning btn-sm ml-2" (click)="borrarLibro()">eliminar</button>
   </div>
 </div>

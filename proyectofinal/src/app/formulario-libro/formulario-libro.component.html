@@ -62,8 +62,8 @@
           
          
           
-                  <button type="button" class="btn btn-warning micssboton btn-block mt-5" (click)="guardar()" >Add Book</button>
-
+                  <button type="button" class="btn btn-warning micssboton btn-block mt-5" (click)="guardar()" *ngIf="!bandera">Agregar Libro</button>
+                  <button type="button" class="btn btn-warning micssboton btn-block mt-5" (click)="actualizar()" *ngIf="bandera" >Actualizar Libro</button>
 
 
         </form>

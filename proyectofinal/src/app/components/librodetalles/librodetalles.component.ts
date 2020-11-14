@@ -36,8 +36,26 @@ export class LibrodetallesComponent implements OnInit {
 
 
   borrarLibro(): void{
-    this.datalibroservice.borrarLibro(this.id);
-    this.ruta.navigate(['libros'])
+
+   const respuesta = confirm('¿Esta seguro de querer eliminar este libro?')
+
+    if(respuesta){
+
+      this.datalibroservice.borrarLibro(this.id);
+      this.ruta.navigate(['libros'])
+    }
+
+   
   }
+
+
+  editarLibro(){
+
+  }
+
+
+
+
+
 
 }

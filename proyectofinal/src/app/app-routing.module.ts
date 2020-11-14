@@ -15,6 +15,7 @@ const routes: Routes = [
 { path: 'login', component: InicioDeSesionComponent},
 {path:'login/registro', component: RegistroComponent},
 {path:'libros/add', component: FormularioLibroComponent},
+{path:'libros/edit/:id', component: FormularioLibroComponent},
 {path: 'libros', component: MybodyComponent},
 {path: 'libros/:id', component: LibrodetallesComponent},
 { path: '', redirectTo: '/home', pathMatch: 'full' }

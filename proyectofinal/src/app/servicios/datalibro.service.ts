@@ -102,9 +102,10 @@ export class DatalibroService {
   }
 
 
-  actualizarLibro(libro : Libro) : void {
+  actualizarLibro(libro : any) : void {
     let id = libro.id;
-
+    console.log("en id lo que llego fue : ",id);
+    
     this.documento = this.angularstore.doc<Libro>(`books/${id}`);
 
     this.documento.update(libro);
