@@ -14,6 +14,12 @@ import { environment } from '../environments/environment';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFireDatabaseModule } from '@angular/fire/database';
 import { AngularFireAuth } from '@angular/fire/auth';
+
+import { AngularFirestoreModule } from '@angular/fire/firestore';
+import { AngularFirestore } from '@angular/fire/firestore';
+
+
+
 import { DatalibroService } from './servicios/datalibro.service';
 import { AutenticacionService } from './servicios/autenticacion.service';
 
@@ -21,6 +27,8 @@ import { AutenticacionService } from './servicios/autenticacion.service';
 import { AngularFontAwesomeModule } from 'angular-font-awesome';
 import { HomepageComponent } from './components/homepage/homepage.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { LibrodetallesComponent } from './components/librodetalles/librodetalles.component';
+
 
 
 
@@ -33,7 +41,8 @@ import { FooterComponent } from './components/footer/footer.component';
     InicioDeSesionComponent,
     FormularioLibroComponent,
     HomepageComponent,
-    FooterComponent
+    FooterComponent,
+    LibrodetallesComponent
   ],
   imports: [
     BrowserModule,
@@ -41,12 +50,12 @@ import { FooterComponent } from './components/footer/footer.component';
     FormsModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFireDatabaseModule,
-
+    AngularFirestoreModule,
     AngularFontAwesomeModule
     
 
   ],
-  providers: [AngularFireAuth, DatalibroService, AutenticacionService],
+  providers: [AngularFireAuth,AngularFirestore, DatalibroService, AutenticacionService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

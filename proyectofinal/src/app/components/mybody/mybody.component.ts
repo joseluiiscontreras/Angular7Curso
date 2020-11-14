@@ -6,6 +6,7 @@ import { Libro } from '../../servicios/Libro';
 import { AutenticacionService } from '../../servicios/autenticacion.service';
 
 
+
 @Component({
   selector: 'app-mybody',
   templateUrl: './mybody.component.html',
@@ -26,7 +27,12 @@ export class MybodyComponent implements OnInit {
   constructor( servicio : DatalibroService, private auth: AutenticacionService ) { 
 
     // servicio de donde se obtienen el arreglo de objetos tipo Libro
-    this.lista_de_libros=servicio.listaLibro();
+    //this.lista_de_libros=servicio.listaLibro();
+    servicio.getAllBooks().subscribe(libros => {
+     
+      this.lista_de_libros= libros;
+     
+    });
 
   }
 
@@ -50,7 +56,7 @@ export class MybodyComponent implements OnInit {
 
 
 
-
+  
 
   
 

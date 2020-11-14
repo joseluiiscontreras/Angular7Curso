@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DatalibroService } from '../../servicios/datalibro.service';
 
 @Component({
   selector: 'app-homepage',
@@ -7,9 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomepageComponent implements OnInit {
 
-  constructor() { }
+  constructor(private datalibro:DatalibroService) { }
 
+  // en on init devolvemos el arreglo de libros desde firebase! esto es provicional para prueba
   ngOnInit() {
+    this.datalibro.getAllBooks().subscribe(books => {
+      console.log("books:", books);
+      
+    });
   }
 
 }

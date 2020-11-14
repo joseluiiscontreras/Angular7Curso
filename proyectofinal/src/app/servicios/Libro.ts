@@ -1,10 +1,10 @@
 export class Libro {
 
-    private nombre:string;
-    private autor:string;
-    private descripcion:string;
-    private imagen:string;
-
+    nombre:string;
+    autor:string;
+    descripcion:string;
+    imagen:string;
+    id : string;
     
     constructor(nombre:string, autor:string, descripcion:string, imagen:string){
         this.nombre=nombre;
