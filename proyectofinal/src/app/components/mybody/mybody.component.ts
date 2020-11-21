@@ -17,10 +17,12 @@ export class MybodyComponent implements OnInit {
 
   public alfabeto : string[] = ['B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z'];
    
+  public buscar : string= "";
 
 
 
   public  lista_de_libros  : Libro[];
+  public lista_de_libros_copy : Libro[]; // provicional sera una copia;
 
   public estaLogueado : boolean = false;
 
@@ -31,6 +33,7 @@ export class MybodyComponent implements OnInit {
     servicio.getAllBooks().subscribe(libros => {
      
       this.lista_de_libros= libros;
+      this.lista_de_libros_copy = libros; // copia provicional
      
     });
 
@@ -49,6 +52,39 @@ export class MybodyComponent implements OnInit {
     this.auth.estaAutenticado().subscribe(resultado => {
 
         if (resultado){this.estaLogueado=true}else{this.estaLogueado=false}});
+
+  }
+
+
+
+
+  filtrarLibros(){
+    console.log(this.buscar);
+    let aux = "Harry Potter y La Camara Secreta";
+   let thatesa = this.buscar;
+    
+    
+    this.lista_de_libros=this.lista_de_libros.filter(function (libro) {
+      console.log("adentro:" , thatesa);
+
+
+      
+       if (libro.nombre == thatesa){
+        return libro.nombre == thatesa;
+       }else if(libro.autor == thatesa){
+        return libro.autor == thatesa;
+       }
+      
+          
+
+    });
+
+   
+    if(this.buscar == ""){
+      this.lista_de_libros = this.lista_de_libros_copy;
+
+    } 
+
 
   }
   
