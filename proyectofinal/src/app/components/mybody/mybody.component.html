@@ -25,13 +25,57 @@
 
 
 
+
+
+
+
+
 <div class="container-fluid ">
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
   <div class=" d-flex flex-row-reverse " *ngIf="estaLogueado">
   <button type="button" class="btn btn-warning btn-md" [routerLink]="['add']" >
     <i class="fa fa-plus" aria-hidden="true"></i></button>
+
+
+<!--barra de busqueda-->
+
+  <form class="form-inline my-2 my-lg-0" #busquedaBook="ngForm"  >
+    <!--
+    <input class="form-control mr-sm-2" type="search" placeholder="Find your next great book" aria-label="Search">
+  
+    <button class="btn btn-warning my-2 my-sm-0" type="submit">Buscar</button>
+  -->
+    <div class="input-group">
+  
+      
+      <div class="input-group-prepend">
+        <span class="input-group-text mio" id="basic-addon1"><i class="fa fa-search" aria-hidden="true"></i></span>
+      </div>
+      <input type="text" class="form-control" placeholder="Find your next great book" aria-label="Username" aria-describedby="basic-addon1" [(ngModel)]="buscar"  (keydown.enter)="filtrarLibros()" name="busqueda">
+    </div>
+  
+  </form>
+
+  <!--barra de busqueda fin-->
+
 </div>
+
+
+
 
 
 <!--primera linea-->
