@@ -59,13 +59,12 @@ export class MybodyComponent implements OnInit {
 
 
   filtrarLibros(){
-    console.log(this.buscar);
-    let aux = "Harry Potter y La Camara Secreta";
+   
    let thatesa = this.buscar;
     
     
     this.lista_de_libros=this.lista_de_libros.filter(function (libro) {
-      console.log("adentro:" , thatesa);
+      
 
 
       
